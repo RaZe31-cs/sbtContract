@@ -1,0 +1,5 @@
+slice loadValueFromKey(int key, cell content) {
+    slice s = content.begin_parse().skip_bits(8);
+    (slice value, _) = s~load_dict().udict_get?(256, key);
+    return value;
+}
